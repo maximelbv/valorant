@@ -5,30 +5,34 @@ var swiper = new Swiper(".mySwiper", {
     },
 });
 
+$(document).ready(function(){
+    $.ajax({
+        url: 'https://valorant-api.com/v1/agents',
+        method: "GET",
+        dataType : "json",
+    })
 
-// test call
-// $(document).ready(function(){
-//     $.ajax({
-//         url: 'https://valorant-api.com/v1/agents/dade69b4-4f5a-8528-247b-219e5a1facd6',
-//         method: "GET",
-//         dataType : "json",
-//     })
+    .done(function(res){
+        for (let i=0; i<= res.data.length; i++) {
+            console.log(res.data[i].displayName)
+            $('.swiper-wrapper').append(`
+                <div class="swiper-slide">
+                    <p class='name'>${res.data[i].displayName}</p>
+                    <img 
+                        class='displayIcon' 
+                        src= ${res.data[i].displayIcon} 
+                        alt= ${res.data[i].displayName}
+                    ></img>
+                </div>`);
+        }
+    })
 
-//     .done(function(res){Slide 1
-//         let status = res.status;
-//         let data = JSON.stringify(res);
-//         let name = res.data.displayName;
-//         $(".test").append(name);
-//         $('.illustration').attr('src', res.data.displayIcon)
-//         console.log(res.data)
-//     })
-
-//     .fail(function(error){
-//         alert("echec de la requête: " + JSON.stringify(error));
-//     })
+    .fail(function(error){
+        alert("echec de la requête: " + JSON.stringify(error));
+    })
 
     // .always(function(){
     //     alert("Requête effectuée");
     // });
 
-// });
+});
