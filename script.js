@@ -1,11 +1,13 @@
 var swiper = new Swiper(".mySwiper", {
+    observer: true,
+    observerParents: true,
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
 });
 
-$(document).ready(function(){
+$(function(){
     $.ajax({
         url: 'https://valorant-api.com/v1/agents',
         method: "GET",
