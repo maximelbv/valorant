@@ -5,7 +5,7 @@ var swiper = new Swiper(".mySwiper", {
 
 $(function(){
     $.ajax({
-        url: 'https://valorant-api.com/v1/agents',
+        url: 'https://valorant-api.com/v1/agents?isPlayableCharacter=true',
         method: "GET",
         dataType : "json",
     })
