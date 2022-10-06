@@ -38,6 +38,7 @@ $(function(){
 
     .done(function(res){
 
+
         for (let i=0; i<= res.data.length; i++) {
 
             let name = res.data[i].displayName;
@@ -50,12 +51,42 @@ $(function(){
 
             $('.swiper-wrapper').append(`
                 <div class="swiper-slide">
-                    <p class='name'>${res.data[i].displayName}</p>
-                    <img 
-                        class='displayIcon' 
-                        src= ${res.data[i].displayIcon} 
-                        alt= ${res.data[i].displayName}
-                    ></img>
+
+                    <div class='infos'>
+                        <img 
+                            class='displayIcon' 
+                            src= ${icon} 
+                            alt= ${name}
+                        ></img>
+                        <p class='name'>${name}</p>
+                        <p class='desc'>${desc}</p>
+                        <div class='spells'></div>
+                    </div>
+
+                    <div class='illustration'>
+
+                        <img
+                            class='displayIllustration'
+                            src= ${illustration} 
+                            alt= ${name}
+                        ></img>
+
+                        <img
+                            class='displayBackground'
+                            src= ${background} 
+                            alt= ${name}
+                        ></img>
+
+                    </div>
+
+
+
+
+                    
+
+
+
+
                 </div>`);
         }
     })
