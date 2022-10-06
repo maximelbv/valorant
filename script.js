@@ -15,24 +15,20 @@ $(function(){
 
         for (let i=0; i<= res.data.length; i++) {
 
+            let id = res.data[i].uuid;
             let name = res.data[i].displayName;
             let icon = res.data[i].displayIcon;
             let desc = res.data[i].description;
             let illustration = res.data[i].fullPortrait;
             let background = res.data[i].background;
-            let bgColor = res.data[i].backgroundGradientColors[0];
-            
-        
+            let bgColor = `#${res.data[i].backgroundGradientColors[0]}`;
 
+            console.log(bgColor);
+                        
             $('.swiper-wrapper').append(`
-                <div class="swiper-slide">
-
+                <div class="swiper-slide ${id}">
+                
                     <div class='infos'>
-                        <img 
-                            class='displayIcon' 
-                            src= ${icon} 
-                            alt= ${name}
-                        ></img>
                         <p class='name'>${name}</p>
                         <p class='desc'>${desc}</p>
                         <div class='spells'></div>
@@ -40,12 +36,12 @@ $(function(){
 
                     <div class='illustration'>
 
-                        <img
-                            class='displayIllustration'
+                    <img
+                    class='displayIllustration'
                             src= ${illustration} 
                             alt= ${name}
                         ></img>
-
+                        
                         <img
                             class='displayBackground'
                             src= ${background} 
@@ -54,16 +50,9 @@ $(function(){
 
                     </div>
 
-
-
-
-                    
-
-
-
-
                 </div>`);
-        }
+                $(`.${id}`).css('background', `${bgColor} !important`);
+                    }
     })
 
     .fail(function(error){
