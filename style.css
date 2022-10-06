@@ -1,7 +1,9 @@
 @font-face {
     font-family: 'valorant';
-    src: url('./media/valorant/Valorant/Font.ttf');
+    src: url('./media/valorant/Valorant Font.ttf');
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 html,
 body {
@@ -10,8 +12,7 @@ body {
 }
 
 body {
-    background: #eee;
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 14px;
     color: #000;
     margin: 0;
@@ -26,7 +27,7 @@ body {
 .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #b1414cff;
+    background: rgb(26, 26, 26);
     /* Center slide text vertically */
     display: -webkit-box;
     display: -ms-flexbox;
@@ -43,13 +44,14 @@ body {
 }
 
 .infos {
+    max-width: 640px;
     position: relative;
     display: flex;
     width: 50%;
     color: white;
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding-left: 100px;
 }
 
 .name {
@@ -67,6 +69,7 @@ body {
 
 
 .illustration {
+    max-width: 640px;
     width: 50%;
     position: relative;
     display: flex;
@@ -77,4 +80,21 @@ body {
 .displayIllustration {
     height: 50rem;
     position: absolute;
+}
+
+.displayBackground {
+    width: 10000px
+}
+
+@media only screen and (max-width: 794px) {
+    .swiper-slide {
+            flex-direction: column;
+            align-items: center;
+        }
+        .infos {
+            padding: 0;
+            margin: 50px 0 -70px 0;
+        }
+        .name {text-align: center;}
+        .desc {text-align: center;}
 }

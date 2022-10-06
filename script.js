@@ -21,10 +21,7 @@ $(function(){
             let desc = res.data[i].description;
             let illustration = res.data[i].fullPortrait;
             let background = res.data[i].background;
-            let bgColor = `#${res.data[i].backgroundGradientColors[0]}`;
 
-            console.log(bgColor);
-                        
             $('.swiper-wrapper').append(`
                 <div class="swiper-slide ${id}">
                 
@@ -51,7 +48,6 @@ $(function(){
                     </div>
 
                 </div>`);
-                $(`.${id}`).css('background', `${bgColor} !important`);
                     }
     })
 
