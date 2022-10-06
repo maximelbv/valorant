@@ -38,53 +38,9 @@ body {
     align-items: center;
 }
 
-body {
-    background: #000;
-    color: #000;
-}
-
-.swiper {
-    width: 100%;
-    height: 300px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* active page */
-.swiper-slide {
-    background-size: cover;
-    background-position: center;
-}
-
-.mySwiper2 {
-    height: 80%;
-    width: 100%;
-}
-
-.mySwiper {
-    height: 20%;
-    box-sizing: border-box;
-    padding: 10px 0;
-    display: flex;
-}
-
-/* thumbnails */
-.mySwiper .swiper-slide {
-    width: 25%;
-    height: 100%;
-    opacity: 0.4;
-    height: 50px;
-}
-
-.mySwiper .swiper-slide p {display: none;}
-
-.mySwiper .swiper-slide-thumb-active {
-    opacity: 1;
-}
-
 .swiper-slide img {
     display: block;
-    width: 50px;
-    height: 50px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
