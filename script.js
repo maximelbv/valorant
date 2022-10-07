@@ -7,6 +7,11 @@ var swiper = new Swiper(".mySwiper", {
     },
 });
 
+$( "span" ).hover(function() {
+    $( "p" ).show( "slow" );
+    $("h1").hide("slow");
+  });
+
 $(function(){
     $.ajax({
         url: 'https://valorant-api.com/v1/agents?isPlayableCharacter=true',
