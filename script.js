@@ -30,6 +30,14 @@ $(function(){
             let desc = res.data[i].description;
             let illustration = res.data[i].fullPortrait;
             let background = res.data[i].background;
+            let spell1Description = res.data[i].abilities[0].description;
+            let spell2Description = res.data[i].abilities[1].description;
+            let spell3Description = res.data[i].abilities[2].description;
+            let spell4Description = res.data[i].abilities[3].description;
+            let spell1Img = res.data[i].abilities[0].displayIcon;
+            let spell2Img = res.data[i].abilities[1].displayIcon;
+            let spell3Img = res.data[i].abilities[2].displayIcon;
+            let spell4Img = res.data[i].abilities[3].displayIcon;
 
             $('.swiper-wrapper').append(`
                 <div class="swiper-slide ${id}">
@@ -37,7 +45,15 @@ $(function(){
                     <div class='infos'>
                         <p class='name'>${name}</p>
                         <p class='desc'>${desc}</p>
-                        <div class='spells'></div>
+                        <div class="spell">
+                            <div class="spellimg">
+                                <img id="img1" dataId=${i} src= ${spell1Img}></img>
+                                <img id="img2" src= ${spell2Img}></img>
+                                <img id="img3" src= ${spell3Img}></img>
+                                <img id="img4" src= ${spell4Img}></img>
+                            </div>
+                        <p id="p1" >${spell1Description}</p>
+                    </div>
                     </div>
 
                     <div class='illustration'>
@@ -57,6 +73,19 @@ $(function(){
                     </div>
 
                 </div>`);
+
+                $("#img1").click(function() {
+                    $("#p1").text(res.data[0].abilities[0].description);
+                });
+                $("#img2").click(function() {
+                    $("#p1").text(res.data[0].abilities[1].description);
+                });
+                $("#img3").click(function() {
+                    $("#p1").text(res.data[0].abilities[2].description);
+                });
+                $("#img4").click(function() {
+                    $("#p1").text(res.data[0].abilities[3].description);
+                });
                     }
     })
 

@@ -55,6 +55,25 @@ body {
     padding-left: 100px;
 }
 
+.spellimg {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  padding-top: 20px;
+  height: 100px;
+}
+
+#img1, #img2, #img3, #img4 {
+  width: 15%;
+  cursor: pointer;
+}
+
+#img1:hover, #img2:hover, #img3:hover, #img4:hover {
+  border-bottom: 5px solid white;
+  padding-bottom: 5px;
+}
+
 
 .name {
     font-size: 3rem;
