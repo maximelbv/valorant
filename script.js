@@ -1,6 +1,10 @@
 var swiper = new Swiper(".mySwiper", {
     observer: true,
     observerParents: true,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
 });
 
 $(function(){
